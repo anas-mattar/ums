@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="public/images/logo.ico" type="image/png">
+    <title>لوحة الإدارة </title>
+    <link href="public/admin/css/style.default.css" rel="stylesheet">
+    <link href="public/admin/css/bootstrap-timepicker.min.css" rel="stylesheet"/>
+    <link href="public/admin/css/jquery.tagsinput.css" rel="stylesheet"/>
+    <link href="public/admin/css/colorpicker.css" rel="stylesheet"/>
+
+<!--    <link href="public/admin/css/style.default-rtl.css" rel="stylesheet">-->
+
+    <link href="public/admin/css/jquery.datatables.css" rel="stylesheet">
+    <link href="public/admin/css/jquery.gritter.css" rel="stylesheet">
+    <link href="public/admin/css/ums.style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="public/admin/js/html5shiv.js"></script>
+    <script src="public/admin/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<!-- Preloader -->
+
+<div id="preloader" style="display: none">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<section>
+    <div class="leftpanel sticky-leftpanel">
+
+        <div class="logopanel" style="text-align: center">
+            <a href="/home"><img src="public/images/logo.png" class="img-responsive" style="height: 100px;margin: 0px auto;"  /></a>
+        </div><!-- logopanel -->
+        <div class="leftpanelinner">
+            <ul class="nav nav-pills nav-stacked nav-bracket">
+                <li class="nav-parent nav-active active">
+                    <a href="javascript:;"><i class="fa fa-user"></i>
+                                <span>
+Manage Category
+                                </span>
+                    </a>
+                    <ul class="children" style="display: block;">
+                        <li class="">
+                            <a href="http://damascus-now.com/damascus-now.com/users/index">
+                                <i class="fa fa-caret-right"></i>
+Browse Category
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="http://damascus-now.com/damascus-now.com/users/create">
+                                <i class="fa fa-caret-right"></i>
+                                    Create Category
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-parent nav-active">
+                    <a href="javascript:;"><i class="fa fa-globe"></i>
+                                <span>
+									Home Page
+                                </span>
+                    </a>
+                    <ul class="children">
+                        <li class="">
+                            <a href="http://damascus-now.com/damascus-now.com/news/index">
+                                <i class="fa fa-caret-right"></i>
+                                Slider
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="http://damascus-now.com/damascus-now.com/news/create">
+                                <i class="fa fa-caret-right"></i>
+                                Create Slider
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- leftpanelinner -->
+    </div><!-- leftpanel -->    <div class="mainpanel">
+    <div class="headerbar">
+
+        <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+
+
+
+        <!---->
+        <div class="header-right">
+            <ul class="headermenu">
+                <li>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://sp.sawaisp.sy/images/photos/loggeduser.png" alt="User Image"/>
+                            تجريب                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-usermenu">
+
+                            <li><a href="http://damascus-now.com/damascus-now.com/users/changepassword"><i
+                                    class="glyphicon glyphicon-user"></i>تعديل كلمة المرور مستخدم</a>
+                            </li>
+
+                            <!--
+<li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
+<li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
+-->
+
+                            <li><a href="http://damascus-now.com/damascus-now.com/login/logout"><i
+                                    class="glyphicon glyphicon-log-out"></i>تسجيل خروج</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- <li>
+                    <button id="chatview" class="btn btn-default tp-icon chat-icon">
+                        <i class="glyphicon glyphicon-comment"></i>
+                    </button>
+                </li> -->
+            </ul>
+        </div>
+        <!-- header-right -->
+    </div><!-- headerbar -->
+    <div class="panel-body" id="div_system_message">
+    </div>
+    <div id="myModal_session_time_out" class="modal fade bs-example-modal-static" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                    <h4 class="modal-title">لقد انتهت الجلسة</h4>
+                </div>
+                <div class="modal-body">
+                    لقد انتهت الجلسة الخاصة بك.
+                </div>
+                <div class="modal-footer">
+                    <a href="" class="btn btn-primary">Change Password</a>
+                    <a href="" class="btn btn-primary">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contentpanel"></div>
+</div><!-- mainpanel -->
+</section>
+
+<script src="public/admin/js/jquery-1.11.1.min.js"></script>
+<script src="public/admin/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="public/admin/js/jquery-ui-1.10.3.min.js"></script>
+<script src="public/admin/js/bootstrap.min.js"></script>
+<script src="public/admin/js/modernizr.min.js"></script>
+<script src="public/admin/js/jquery.sparkline.min.js"></script>
+<script src="public/admin/js/toggles.min.js"></script>
+<script src="public/admin/js/retina.min.js"></script>
+<script src="public/admin/js/jquery.cookies.js"></script>
+<script src="public/admin/js/jquery.flot.min.js"></script>
+<script src="public/admin/js/jquery.flot.resize.min.js"></script>
+<script src="public/admin/js/jquery.flot.spline.min.js"></script>
+<script src="public/admin/js/morris.min.js"></script>
+<script src="public/admin/js/raphael-2.1.0.min.js"></script>
+<script src="public/admin/js/custom.js"></script>
+
+
+
+<script src="public/admin/js/jquery.gritter.min.js"></script>
+
+<script type="text/javascript">
+
+    var div_message_count = 0;
+    function show_message(type_message, text_message) {
+
+        var type_message_header = '';
+        var div_alert = '';
+        if (type_message == 'message_success') {
+            type_message_header = 'نجاح';
+            div_alert = 'success';
+        } else if (type_message == 'message_info') {
+            type_message_header = 'معلومة';
+            div_alert = 'info';
+        } else if (type_message == 'message_warning') {
+            type_message_header = 'تحذير';
+            div_alert = 'warning';
+        } else if (type_message == 'message_error') {
+            type_message_header = 'خطأ';
+            div_alert = 'danger';
+        }
+
+        var div_message = '<div id="div_message_id_' + div_message_count + '" class="div_message alert alert-' + div_alert + '">' +
+                '<button type="button" class="close" aria-hidden="true">&times;</button>' +
+                '<strong>' + type_message_header + '!</strong>&nbsp;&nbsp;' +
+                '<span>' + text_message + '</span>' +
+                '</div>';
+
+        $('#div_system_message').html(div_message);
+        $('#div_message_id_' + div_message_count).slideDown();
+
+        $("html, body").animate({scrollTop: 0}, "slow");
+
+        div_message_count++;
+
+    }
+    $(document).ready(function () {
+
+        //$('.div_message').hide();
+
+
+
+        $('.close').live('click', function () {
+            $(this).parent().slideUp();
+            $(this).parent().remove();
+        });
+
+
+        //Appearance
+        $('body').addClass('stickyheader');
+        var appearance_leftpanel = '1';
+        if (appearance_leftpanel == '0') {
+            $('.menutoggle').click();
+        }
+        $('.menutoggle').click(function () {
+            if (appearance_leftpanel == '0') {
+                appearance_leftpanel = '1';
+            } else {
+                appearance_leftpanel = '0';
+            }
+        });
+
+        //-------------------------------------------------------------------------------
+        //Notification
+
+    });
+
+</script><script type="text/javascript">
+
+    //Check Require
+    function check_field_require(field_message_en, field_message_ar, object) {
+        if (object.val().length > 0) {
+            object.parent().parent().removeClass('has-error');
+            return true;
+        } else {
+            object.parent().parent().addClass('has-error');
+            show_message('message_error', field_message_ar);
+            $('html, body').animate({scrollTop: 0}, 'slow');
+            return false;
+        }
+    }
+    function check_field(field_type, field_message_en, field_message_ar, object) {
+        if (object.val() && object.val().length > 0) {
+            if (field_type) {
+                var filter = '';
+
+                if (field_type == 'email') {
+                    filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                } else if (field_type == 'number') {
+                    filter = /^\d+$/;
+                } else if (field_type == 'phone') {
+                    filter = /^(11|21|31|41|43|33|23|22|52|16|14|15|51)\d{6,7}$/;
+                } else if (field_type == 'code') {
+                    filter = /^(11|21|31|41|43|33|23|22|52|16|14|15|51)$/;
+                } else if (field_type == 'phone_without_code') {
+                    filter = /^\d{6,7}$/;
+                } else if (field_type == 'mobile') {
+                    filter = /^9639\d{8}$/;
+                } else if (field_type == 'nationalID') {
+                    filter = /^\d{11}$/;
+                } else if (field_type == 'english') {
+                    filter = /^\w+$/;
+                } else if (field_type == 'english_and_number') {
+                    filter = /^(\w|\d)+$/;
+                } else if (field_type == "english_and_number_and_space") {
+                    filter = /^(\w|\d)+$/;
+                } else if (field_type == 'arabic') {
+                    filter = /^([\u0600-\u06ff]|[\u0750-\u077f]|[\ufb50-\ufc3f]|[\ufe70-\ufefc]| )+$/;
+                } else if (field_type == 'arabic_and_number') {
+                    filter = /^([\u0600-\u06ff]|[\u0750-\u077f]|[\ufb50-\ufc3f]|[\ufe70-\ufefc]| |\d)+$/;
+                }
+
+                if (!filter.test(object.val())) {
+                    object.parent().parent().addClass('has-error');
+                    show_message('message_error', field_message_ar);
+                    $('html, body').animate({scrollTop: 0}, 'slow');
+                    return false;
+                } else {
+                    object.parent().parent().removeClass('has-error');
+                    return true;
+                }
+            } else {
+                show_message('message_error', 'لم تقم بادخال نوع التحقق');
+            }
+        } else {
+            return true;
+        }
+    }
+
+    function check_two_field_equal(field_message_en, field_message_ar, object, object_confirmation) {
+        if (object.val() == object_confirmation.val()) {
+            $(object).parent().parent().removeClass('has-success has-warning has-error');
+            $(object_confirmation).parent().parent().removeClass('has-success has-warning has-error');
+            return true;
+        } else {
+            $(object).parent().parent().removeClass('has-success has-warning has-error');
+            $(object_confirmation).parent().parent().removeClass('has-success has-warning has-error');
+
+            $(object).parent().parent().addClass('has-error');
+            $(object_confirmation).parent().parent().addClass('has-error');
+
+            show_message('message_error', field_message_ar);
+            $('html, body').animate({scrollTop: 0}, 'slow');
+            return false;
+        }
+    }
+
+    function check_field_field_equal_online(object, object_confirmation) {
+
+        if (object.val() == object_confirmation.val()) {
+            $(object).parent().parent().removeClass('has-success has-warning has-error');
+            $(object_confirmation).parent().parent().removeClass('has-success has-warning has-error');
+
+            $(object).parent().parent().addClass('has-success');
+            $(object_confirmation).parent().parent().addClass('has-success');
+        } else {
+            $(object).parent().parent().removeClass('has-success has-warning has-error');
+            $(object_confirmation).parent().parent().removeClass('has-success has-warning has-error');
+
+            $(object).parent().parent().addClass('has-warning');
+            $(object_confirmation).parent().parent().addClass('has-warning');
+        }
+    }
+
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if(charCode==46)
+            return true;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+</script>
+
+</body>
+</html>

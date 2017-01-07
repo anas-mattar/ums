@@ -1,0 +1,18 @@
+.nav-bracket > li.active > a, .nav-bracket > li.active > a:hover, .nav-bracket > li.active > a:focus,
+.headermenu .dropdown-menu li a:hover,
+.leftpanel-collapsed .nav-bracket > li.nav-hover.active > a > span:last-child,
+.leftpanel-collapsed .nav-bracket > li.nav-hover.active > a
+{
+background-color: #1475af;
+}
+.nav-bracket .children > li > a:hover, .nav-bracket .children > li > a:active, .nav-bracket .children > li > a:focus
+    ,.nav-bracket .children > li.active > a
+{
+    color: #1475af;
+}.stickyheader .sticky-leftpanel .leftpanelinner {
+     margin-top: 125px;
+ }
+.progress-bar
+{
+    background-color: #1475af;
+}

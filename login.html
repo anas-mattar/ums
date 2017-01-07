@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png"/>
+
+    <title> تسجيل الدخول </title>
+
+    <link href="public/admin/css/style.default.css" rel="stylesheet">
+
+    <!--<link href="public/admin/css/style.default-rtl.css" rel="stylesheet">-->
+    <style>
+        .btn-success:hover, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success,.btn-success
+
+        {
+            background-color: #1475af;
+            border-color:#1475af;
+        }
+        .logopanel h1 span,a
+        {
+            color:#1475af;
+        }
+
+    </style>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="public/js/html5shiv.js"></script>
+    <script src="public/js/respond.min.js"></script>
+
+    <![endif]-->
+
+</head>
+
+<body class="signin">
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<section>
+    <div class="signinpanel">
+        <div class="row">
+            <!-- col-sm-7 -->
+            <div class="col-md-5 col-xs-12 col-md-offset-3 col-xs-offset-0">
+                <div class="signin-info">
+                    <div class="logopanel">
+                        <a href=""><img src="public/images/logo.png" class="img-responsive" style="margin: 10px auto" /></a>
+                    </div>
+                </div>
+                <?php if(isset($Error)) { ?>
+                <div class="alert alert-danger">
+                    <?= $Error;?>
+                </div>
+
+                <?php } ?>
+                <form method="POST">
+                    <h4 class="nomargin">تسجيل الدخول</h4>
+                    <p class="mt5 mb20">الدخول إلى لوحة التحكم</p>
+                    <input type="name" class="form-control uname" name="username" placeholder="Enter Your Name" />
+                    <input type="password" class="form-control pword" name="password" placeholder="Enter Your Password" />
+                    <input type="submit" class="btn btn-success btn-block" value="تسجيل الدخول" name="logging" />
+
+                </form>
+            </div>
+            <!-- col-sm-5 -->
+        </div>
+        <!-- row -->
+
+        <div class="signup-footer">
+            <div class="pull-left">
+                UMS.ae by Eng. Anas Mattar &copy; <?= date('Y') ?>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- signin -->
+
+</section>
+
+<script src="public/admin/js/jquery-1.11.1.min.js"></script>
+<script src="public/admin/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="public/admin/js/bootstrap.min.js"></script>
+<script src="public/admin/js/modernizr.min.js"></script>
+<script src="public/admin/js/retina.min.js"></script>
+<script src="public/admin/js/custom.js"></script>
+
+</body>
+</html>
